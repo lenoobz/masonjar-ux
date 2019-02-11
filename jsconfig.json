@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "baseUrl": ".",
+    "paths": {
+      "Actions/*": ["./src/actions/*"],
+      "Components/*": ["./src/components/*"],
+      "Configs/*": ["./src/configs/*"],
+      "Constants/*": ["./src/constants/*"],
+      "Containers/*": ["./src/containers/*"],
+      "Reducers/*": ["./src/reducers/*"],
+      "Routes/*": ["./src/routes/*"],
+      "Stores/*": ["./src/stores/*"],
+      "Styles/*": ["./src/styles/*"],
+      "Utilities/*": ["./src/utilities/*"]
+    }
+  },
+  "include": ["src"]
+}
