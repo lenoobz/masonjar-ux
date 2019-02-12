@@ -2,7 +2,7 @@
   "parser": "babel-eslint",
   "extends": ["airbnb"],
   "plugins": ["react", "jsx-a11y", "import"],
-  "env": { "browser": true },
+  "env": { "browser": true, "jest": true },
   "rules": {
     "import/no-unresolved": ["off"],
     "import/no-extraneous-dependencies": ["off"],
