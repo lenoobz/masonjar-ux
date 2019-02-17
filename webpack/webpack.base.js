@@ -7,9 +7,15 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const APP_DIR = path.resolve(process.cwd(), './src');
+const BUILD_DIR = path.resolve(process.cwd(), './public');
 
 module.exports = {
-  entry: { main: `${APP_DIR}/index.js` },
+  entry: { index: `${APP_DIR}/index.js` },
+  output: {
+    filename: 'bundle.js',
+    path: BUILD_DIR,
+    publicPath: '/'
+  },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
     alias: {
@@ -36,8 +42,8 @@ module.exports = {
             options: {
               cacheDirectory: true,
               plugins: [
-                '@babel/plugin-proposal-class-properties',
                 '@babel/plugin-transform-runtime',
+                '@babel/plugin-proposal-class-properties',
                 '@babel/plugin-transform-async-to-generator'
               ]
             }
@@ -65,9 +71,6 @@ module.exports = {
         ]
       }
     ]
-  },
-  devServer: {
-    historyApiFallback: true
   },
   plugins: [
     new HtmlWebPackPlugin({

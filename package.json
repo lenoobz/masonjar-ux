@@ -7,12 +7,12 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
-    "start:dev": "webpack-dev-server --config webpack/webpack.dev.js --mode development",
+    "start:dev": "webpack-dev-server --config webpack/webpack.dev.js --host 0.0.0.0 --hot --inline",
     "build:dev": "webpack --config webpack/webpack.dev.js --mode development"
   },
   "repository": "https://github.com/github:letrong/masonjar-ux",
   "author": "Le Huynh",
-  "license": "Le Huynh",
+  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
@@ -47,6 +47,7 @@
     "sass-loader": "^7.1.0",
     "source-map": "^0.7.3",
     "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.1",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14",
