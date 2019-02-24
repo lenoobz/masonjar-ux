@@ -5,4 +5,4 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<div>This is home page</div>, document.getElementById('app'));
+ReactDOM.render(<div>This is home page. v1</div>, document.getElementById('app'));
