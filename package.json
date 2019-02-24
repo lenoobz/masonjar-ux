@@ -4,11 +4,12 @@
   "description": "Masonjar IoT Project",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage --colors",
     "start:dev": "webpack-dev-server --config webpack/webpack.dev.js --host 0.0.0.0 --hot --inline",
-    "build:dev": "webpack --config webpack/webpack.dev.js --mode development"
+    "start:prod": "webpack --config webpack/webpack.prod.js & node ./server/index.js",
+    "build": "webpack --config webpack/webpack.prod.js --progress",
+    "start": "node ./server/index.js",
+    "test": "jest",
+    "test:watch": "npm test --watch"
   },
   "repository": "https://github.com/github:letrong/masonjar-ux",
   "author": "Le Huynh",
