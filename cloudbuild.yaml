@@ -1,0 +1,35 @@
+#
+# Create by Le Trong on 24/Feb/2019
+#
+steps:
+  - name: "gcr.io/cloud-builders/npm"
+    id: "Install dependencies"
+    args: ["install"]
+
+  - name: "gcr.io/cloud-builders/npm"
+    id: "Build"
+    args: ["run", "build"]
+    env:
+      - "BUILD_ID=$BUILD_ID"
+
+  # Build snapshot images and push them to Cloud Registry
+
+  - name: "gcr.io/cloud-builders/docker"
+    id: "Build deployable image (commit tag)"
+    args: ["build", "-t", "gcr.io/$PROJECT_ID/masonjar-ux:$SHORT_SHA", "."]
+
+  - name: "gcr.io/cloud-builders/docker"
+    id: "Push deployable image (commit tag)"
+    args: ["push", "gcr.io/$PROJECT_ID/masonjar-ux:$SHORT_SHA"]
+
+  - name: "gcr.io/cloud-builders/docker"
+    id: "Build deployable image (latest tag)"
+    args: ["build", "-t", "gcr.io/$PROJECT_ID/masonjar-ux:latest", "."]
+
+  - name: "gcr.io/cloud-builders/docker"
+    id: "Push deployable image (latest tag)"
+    args: ["push", "gcr.io/$PROJECT_ID/masonjar-ux:latest"]
+
+images:
+  - "gcr.io/$PROJECT_ID/masonjar-ux:$SHORT_SHA"
+  - "gcr.io/$PROJECT_ID/masonjar-ux:latest"
