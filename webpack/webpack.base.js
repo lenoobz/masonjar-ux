@@ -74,17 +74,17 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: 'src/index.html',
+      template: '../src/index.html',
       filename: '../public/index.html',
       hash: true
     }),
     new CopyWebpackPlugin([
       {
-        from: 'src/assets',
+        from: '../src/assets',
         to: 'assets'
       },
       {
-        from: 'src/styles',
+        from: '../src/styles',
         to: 'styles'
       }
     ])
