@@ -74,17 +74,17 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: 'src/index.html',
-      filename: '../public/index.html',
+      template: path.resolve(__dirname, '../src/index.html'),
+      filename: path.resolve(__dirname, '../public/index.html'),
       hash: true
     }),
     new CopyWebpackPlugin([
       {
-        from: '../src/assets',
+        from: path.resolve(__dirname, '../src/assets'),
         to: 'assets'
       },
       {
-        from: '../src/styles',
+        from: path.resolve(__dirname, '../src/styles'),
         to: 'styles'
       }
     ])
