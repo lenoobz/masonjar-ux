@@ -6,8 +6,8 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const APP_DIR = path.resolve(process.cwd(), './src');
-const BUILD_DIR = path.resolve(process.cwd(), './public');
+const APP_DIR = path.resolve(__dirname, '../src');
+const BUILD_DIR = path.resolve(__dirname, '../public');
 
 module.exports = {
   entry: { index: `${APP_DIR}/index.js` },
@@ -19,16 +19,16 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
     alias: {
-      Actions: path.join(APP_DIR, '/actions/'),
-      Components: path.join(APP_DIR, '/components/'),
-      Configs: path.join(APP_DIR, '/configs/'),
-      Constants: path.join(APP_DIR, '/constants/'),
-      Containers: path.join(APP_DIR, '/containers/'),
-      Reducers: path.join(APP_DIR, '/reducers/'),
-      Routes: path.join(APP_DIR, '/routes/'),
-      Stores: path.join(APP_DIR, '/stores/'),
-      Styles: path.join(APP_DIR, '/styles/'),
-      Utilities: path.join(APP_DIR, '/utilities/')
+      Actions: path.resolve(__dirname, '../src/actions/'),
+      Components: path.resolve(__dirname, '../src/components/'),
+      Configs: path.resolve(__dirname, '../src/configs/'),
+      Constants: path.resolve(__dirname, '../src/constants/'),
+      Containers: path.resolve(__dirname, '../src/containers/'),
+      Reducers: path.resolve(__dirname, '../src/reducers/'),
+      Routes: path.resolve(__dirname, '../src/routes/'),
+      Stores: path.resolve(__dirname, '../src/stores/'),
+      Styles: path.resolve(__dirname, '../src/styles/'),
+      Utilities: path.resolve(__dirname, '../src/utilities/')
     }
   },
   module: {
