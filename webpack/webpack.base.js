@@ -4,7 +4,6 @@
 
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const APP_DIR = path.resolve(__dirname, '../src');
 const BUILD_DIR = path.resolve(__dirname, '../public');
@@ -77,16 +76,6 @@ module.exports = {
       template: path.resolve(__dirname, '../src/index.html'),
       filename: path.resolve(__dirname, '../public/index.html'),
       hash: true
-    }),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../src/assets'),
-        to: 'assets'
-      },
-      {
-        from: path.resolve(__dirname, '../src/styles'),
-        to: 'styles'
-      }
-    ])
+    })
   ]
 };
